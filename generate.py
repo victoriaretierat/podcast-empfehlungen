@@ -33,7 +33,7 @@ GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 
 # ElevenLabs Voice ID – "Antoni" (klingt natürlich auf Deutsch)
 # Andere kostenlose Stimmen: "Rachel", "Domi", "Bella"
-ELEVENLABS_VOICE_ID = "ErXwobaYiN019PkySvjV"
+ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"  # "Bella" – natürliche weibliche Stimme"
 
 # ─── Schritt 1: Top Podcasts von iTunes holen ────────────────────────────────
 
@@ -71,21 +71,20 @@ def generiere_skript(kategorie_name: str, podcasts: list) -> dict:
         for i, p in enumerate(podcasts[:5])
     ])
 
-    prompt = f"""Du bist ein freundlicher Podcast-Empfehlungs-Host. 
-Schreibe ein kurzes Hör-Skript (max. 200 Wörter, ca. 60 Sekunden) auf Deutsch.
+   prompt = f"""Du bist eine freundliche Podcast-Empfehlungs-Moderatorin.
+Schreibe einen kurzen Hörtext (max. 80 Wörter, ca. 30 Sekunden) auf Deutsch.
 
 Kategorie: {kategorie_name}
-Aktuelle Top-Podcasts laut iTunes Deutschland:
-{podcast_liste}
+Aktueller Top-Podcast laut iTunes Deutschland: {podcasts[0]['name']} von {podcasts[0]['autor']}
+Beschreibung: {podcasts[0]['beschreibung'][:300]}
 
-Das Skript soll:
-- Mit einer kurzen Begrüßung starten: "Willkommen bei Podcast Entdeckungen!"
-- Den Podcast auf Platz 1 empfehlen und kurz erklären warum er interessant ist
-- Mit dem Hinweis enden: "Den Link zum Podcast findest du in den Shownotes."
-- Natürlich und gesprochen klingen (keine Aufzählungspunkte, keine Sonderzeichen)
-- Freundlich und enthusiastisch sein
+Der Text soll:
+- Direkt mit dem Podcast-Namen einsteigen, keine lange Begrüßung
+- In 2-3 Sätzen erklären worum es in diesem Podcast geht
+- Neugierig machen, locker und natürlich klingen
+- Keine Sonderzeichen, keine Aufzählungen, kein Hinweis auf Shownotes oder Links
 
-Antworte NUR mit dem Skript-Text, ohne Anführungszeichen oder Formatierung.
+Antworte NUR mit dem Sprechtext, ohne Anführungszeichen oder Formatierung.
 
 Außerdem: Gib am Ende in einer neuen Zeile "EMPFEHLUNG: [Podcast-Name]" an."""
 
