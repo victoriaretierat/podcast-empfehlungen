@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Podcast Entdeckungen</title>
+    <description>Täglich die besten deutschsprachigen Podcasts entdecken – True Crime, Business und Nachrichten.</description>
+    <link>https://victoriaretierat.github.io/podcast-empfehlungen</link>
+    <language>de</language>
+    <itunes:author>Podcast Entdeckungen</itunes:author>
+    <itunes:category text="Society &amp; Culture"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:image href="https://victoriaretierat.github.io/podcast-empfehlungen/cover.jpg"/>
+
+    <item>
+      <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft – 27.06.2026</title>
+      <description><![CDATA[Willkommen bei Podcast Entdeckungen! Heute empfehlen wir dir Verbrechen von nebenan: True Crime aus der Nachbarschaft aus der Kategorie True Crime. Den Link findest du in den Shownotes!
+
+🎧 Empfohlener Podcast: <a href="https://podcasts.apple.com/de/podcast/verbrechen-von-nebenan-true-crime-aus-der-nachbarschaft/id1449598446?uo=2">Verbrechen von nebenan: True Crime aus der Nachbarschaft</a>
+
+Dieser Beitrag wurde automatisch erstellt von Podcast Entdeckungen. Alle Rechte an den empfohlenen Podcasts liegen bei den jeweiligen Urhebern.]]></description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-27-true-crime.mp3" type="audio/mpeg" length="0"/>
+      <guid isPermaLink="false">2026-06-27-true-crime</guid>
+      <pubDate>Sat, 27 Jun 2026 08:05:54 -0000</pubDate>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Business: Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen – 27.06.2026</title>
+      <description><![CDATA[Willkommen bei Podcast Entdeckungen! Heute empfehlen wir dir Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen aus der Kategorie Business. Den Link findest du in den Shownotes!
+
+🎧 Empfohlener Podcast: <a href="https://podcasts.apple.com/de/podcast/handelsblatt-morning-briefing-news-aus-wirtschaft-politik/id1352434240?uo=2">Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</a>
+
+Dieser Beitrag wurde automatisch erstellt von Podcast Entdeckungen. Alle Rechte an den empfohlenen Podcasts liegen bei den jeweiligen Urhebern.]]></description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-27-business.mp3" type="audio/mpeg" length="0"/>
+      <guid isPermaLink="false">2026-06-27-business</guid>
+      <pubDate>Sat, 27 Jun 2026 08:05:58 -0000</pubDate>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Nachrichten: Apokalypse & Filterkaffee – 27.06.2026</title>
+      <description><![CDATA[Willkommen bei Podcast Entdeckungen! Heute empfehlen wir dir Apokalypse & Filterkaffee aus der Kategorie Nachrichten. Den Link findest du in den Shownotes!
+
+🎧 Empfohlener Podcast: <a href="https://podcasts.apple.com/de/podcast/apokalypse-filterkaffee/id1505993848?uo=2">Apokalypse & Filterkaffee</a>
+
+Dieser Beitrag wurde automatisch erstellt von Podcast Entdeckungen. Alle Rechte an den empfohlenen Podcasts liegen bei den jeweiligen Urhebern.]]></description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-27-nachrichten.mp3" type="audio/mpeg" length="0"/>
+      <guid isPermaLink="false">2026-06-27-nachrichten</guid>
+      <pubDate>Sat, 27 Jun 2026 08:06:03 -0000</pubDate>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
