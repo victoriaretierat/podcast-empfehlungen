@@ -1,4 +1,5 @@
 import os
+import re
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
@@ -24,10 +25,10 @@ KATEGORIEN = {
 }
 
 PODCAST_NAME = "Podcast Entdeckungen"
-PODCAST_BESCHREIBUNG = "Täglich die besten deutschsprachigen Podcasts entdecken – True Crime, Business und Nachrichten."
+PODCAST_BESCHREIBUNG = "Taeglich die besten deutschsprachigen Podcasts entdecken - True Crime, Business und Nachrichten."
 GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 
-# Bella – weibliche Stimme
+# Bella - weibliche Stimme
 ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 
 # ─── Schritt 1: Top Podcasts von iTunes holen ────────────────────────────────
@@ -51,11 +52,9 @@ def hole_top_podcasts(genre_id: str, land: str = "de") -> list:
         print(f"Fehler beim Laden der iTunes Charts: {e}")
         return []
 
-# ─── Schritt 2: RSS Feed des Podcasts holen → neueste Episode ────────────────
+# ─── Schritt 2: Neueste Episode aus dem Podcast-RSS-Feed holen ───────────────
 
 def hole_neueste_episode(podcast: dict) -> dict:
-    """Holt Titel und Beschreibung der neuesten Episode aus dem Podcast-RSS-Feed."""
-
     itunes_link = podcast.get("link", "")
     itunes_id = ""
     if "/id" in itunes_link:
@@ -76,7 +75,7 @@ def hole_neueste_episode(podcast: dict) -> dict:
             print(f"  iTunes Lookup fehlgeschlagen: {e}")
 
     if not feed_url:
-        print(f"  Keine Feed-URL fuer {podcast['name']} - nutze Podcast-Beschreibung")
+        print(f"  Keine Feed-URL - nutze Podcast-Beschreibung")
         return {
             "episode_titel": "",
             "episode_beschreibung": podcast.get("beschreibung", ""),
@@ -90,11 +89,11 @@ def hole_neueste_episode(podcast: dict) -> dict:
         root = ET.fromstring(resp.content)
         channel = root.find("channel")
         if channel is None:
-            raise ValueError("Kein <channel> im Feed gefunden")
+            raise ValueError("Kein <channel> im Feed")
 
         item = channel.find("item")
         if item is None:
-            raise ValueError("Keine Episoden im Feed gefunden")
+            raise ValueError("Keine Episoden im Feed")
 
         titel = item.findtext("title", "").strip()
 
@@ -103,7 +102,6 @@ def hole_neueste_episode(podcast: dict) -> dict:
             ns = {"itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"}
             beschreibung = item.findtext("itunes:summary", "", ns).strip()
 
-        import re
         beschreibung = re.sub(r"<[^>]+>", "", beschreibung)
         beschreibung = beschreibung[:800]
 
@@ -123,8 +121,7 @@ def hole_neueste_episode(podcast: dict) -> dict:
 # ─── Schritt 3: Zusammenfassung mit Gemini generieren ────────────────────────
 
 def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
     hat_episode = bool(episode.get("episode_titel"))
 
@@ -163,7 +160,10 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
     )
 
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt
+        )
         text = response.text.strip()
 
         zeilen = text.split("\n")
