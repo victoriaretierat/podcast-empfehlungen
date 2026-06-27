@@ -1,6 +1,5 @@
 import os
 import requests
-import json
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import formatdate
@@ -12,17 +11,17 @@ import google.generativeai as genai
 KATEGORIEN = {
     "true-crime": {
         "name": "True Crime",
-        "itunes_genre_id": "1488",   # True Crime Genre auf iTunes
+        "itunes_genre_id": "1488",
         "beschreibung": "Wahre Kriminalfälle, Mysteries und Cold Cases"
     },
     "business": {
         "name": "Business",
-        "itunes_genre_id": "1321",   # Business Genre auf iTunes
+        "itunes_genre_id": "1321",
         "beschreibung": "Wirtschaft, Unternehmertum und Karriere"
     },
     "nachrichten": {
         "name": "Nachrichten",
-        "itunes_genre_id": "1526",   # News Genre auf iTunes
+        "itunes_genre_id": "1526",
         "beschreibung": "Aktuelle Nachrichten und Politik"
     }
 }
@@ -31,14 +30,12 @@ PODCAST_NAME = "Podcast Entdeckungen"
 PODCAST_BESCHREIBUNG = "Täglich die besten deutschsprachigen Podcasts entdecken – True Crime, Business und Nachrichten."
 GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 
-# ElevenLabs Voice ID – "Antoni" (klingt natürlich auf Deutsch)
-# Andere kostenlose Stimmen: "Rachel", "Domi", "Bella"
-ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"  # "Bella" – natürliche weibliche Stimme"
+# Bella – natürliche weibliche Stimme
+ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 
 # ─── Schritt 1: Top Podcasts von iTunes holen ────────────────────────────────
 
 def hole_top_podcasts(genre_id: str, land: str = "de") -> list:
-    """Holt Top 10 Podcasts für ein Genre aus dem iTunes Chart."""
     url = f"https://itunes.apple.com/{land}/rss/toppodcasts/limit=10/genre={genre_id}/json"
     try:
         response = requests.get(url, timeout=10)
@@ -58,51 +55,41 @@ def hole_top_podcasts(genre_id: str, land: str = "de") -> list:
         print(f"Fehler beim Laden der iTunes Charts: {e}")
         return []
 
-# ─── Schritt 2: Empfehlungs-Skript mit Gemini generieren ─────────────────────
+# ─── Schritt 2: Skript mit Gemini generieren ─────────────────────────────────
 
 def generiere_skript(kategorie_name: str, podcasts: list) -> dict:
-    """Generiert ein Empfehlungs-Skript mit Gemini AI."""
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
     model = genai.GenerativeModel("gemini-1.5-flash")
 
-    # Podcast-Liste für den Prompt vorbereiten
-    podcast_liste = "\n".join([
-        f"{i+1}. {p['name']} von {p['autor']}"
-        for i, p in enumerate(podcasts[:5])
-    ])
-
-   prompt = f"""Du bist eine freundliche Podcast-Empfehlungs-Moderatorin.
-Schreibe einen kurzen Hörtext (max. 80 Wörter, ca. 30 Sekunden) auf Deutsch.
-
-Kategorie: {kategorie_name}
-Aktueller Top-Podcast laut iTunes Deutschland: {podcasts[0]['name']} von {podcasts[0]['autor']}
-Beschreibung: {podcasts[0]['beschreibung'][:300]}
-
-Der Text soll:
-- Direkt mit dem Podcast-Namen einsteigen, keine lange Begrüßung
-- In 2-3 Sätzen erklären worum es in diesem Podcast geht
-- Neugierig machen, locker und natürlich klingen
-- Keine Sonderzeichen, keine Aufzählungen, kein Hinweis auf Shownotes oder Links
-
-Antworte NUR mit dem Sprechtext, ohne Anführungszeichen oder Formatierung.
-
-Außerdem: Gib am Ende in einer neuen Zeile "EMPFEHLUNG: [Podcast-Name]" an."""
+    prompt = (
+        "Du bist eine freundliche Podcast-Empfehlungs-Moderatorin. "
+        "Schreibe einen kurzen Hörtext (max. 80 Wörter, ca. 30 Sekunden) auf Deutsch.\n\n"
+        f"Kategorie: {kategorie_name}\n"
+        f"Aktueller Top-Podcast laut iTunes Deutschland: {podcasts[0]['name']} von {podcasts[0]['autor']}\n"
+        f"Beschreibung: {podcasts[0]['beschreibung'][:300]}\n\n"
+        "Der Text soll:\n"
+        "- Direkt mit dem Podcast-Namen einsteigen, keine lange Begrüßung\n"
+        "- In 2-3 Sätzen erklären worum es in diesem Podcast geht\n"
+        "- Neugierig machen, locker und natürlich klingen\n"
+        "- Keine Sonderzeichen, keine Aufzählungen, kein Hinweis auf Shownotes oder Links\n\n"
+        "Antworte NUR mit dem Sprechtext, ohne Anführungszeichen oder Formatierung.\n\n"
+        "Außerdem: Gib am Ende in einer neuen Zeile 'EMPFEHLUNG: [Podcast-Name]' an."
+    )
 
     try:
         response = model.generate_content(prompt)
         text = response.text.strip()
-        
-        # Empfehlung extrahieren
+
         zeilen = text.split("\n")
         skript_zeilen = []
         empfohlener_podcast = podcasts[0]["name"] if podcasts else ""
-        
+
         for zeile in zeilen:
             if zeile.startswith("EMPFEHLUNG:"):
                 empfohlener_podcast = zeile.replace("EMPFEHLUNG:", "").strip()
             else:
                 skript_zeilen.append(zeile)
-        
+
         return {
             "skript": "\n".join(skript_zeilen).strip(),
             "empfohlener_podcast": empfohlener_podcast,
@@ -111,7 +98,7 @@ Außerdem: Gib am Ende in einer neuen Zeile "EMPFEHLUNG: [Podcast-Name]" an."""
     except Exception as e:
         print(f"Fehler bei Gemini: {e}")
         return {
-            "skript": f"Willkommen bei Podcast Entdeckungen! Heute empfehlen wir dir {podcasts[0]['name'] if podcasts else 'einen tollen Podcast'} aus der Kategorie {kategorie_name}. Den Link findest du in den Shownotes!",
+            "skript": f"{podcasts[0]['name'] if podcasts else 'Dieser Podcast'} ist der aktuelle Top-Podcast in der Kategorie {kategorie_name}.",
             "empfohlener_podcast": podcasts[0]["name"] if podcasts else "",
             "empfohlener_link": podcasts[0]["link"] if podcasts else ""
         }
@@ -119,7 +106,6 @@ Außerdem: Gib am Ende in einer neuen Zeile "EMPFEHLUNG: [Podcast-Name]" an."""
 # ─── Schritt 3: Audio mit ElevenLabs generieren ──────────────────────────────
 
 def generiere_audio(skript: str, dateiname: str) -> bool:
-    """Konvertiert Text zu Sprache mit ElevenLabs und speichert als MP3."""
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{ELEVENLABS_VOICE_ID}"
     headers = {
         "Accept": "audio/mpeg",
@@ -134,34 +120,26 @@ def generiere_audio(skript: str, dateiname: str) -> bool:
             "similarity_boost": 0.8
         }
     }
-    
+
     try:
         response = requests.post(url, json=data, headers=headers, timeout=30)
         response.raise_for_status()
-        
+
         os.makedirs("audio", exist_ok=True)
         with open(f"audio/{dateiname}", "wb") as f:
             f.write(response.content)
-        
+
         print(f"✅ Audio gespeichert: audio/{dateiname}")
         return True
     except Exception as e:
         print(f"❌ Fehler bei ElevenLabs: {e}")
         return False
 
-# ─── Schritt 4: RSS Feed generieren/aktualisieren ────────────────────────────
+# ─── Schritt 4: RSS Feed aktualisieren ───────────────────────────────────────
 
 def aktualisiere_rss_feed(episoden: list):
-    """Erstellt oder aktualisiert den RSS Feed (Podcast-Format)."""
-    
-    # Bestehenden Feed laden oder neu erstellen
     feed_pfad = "feed.xml"
-    
-    # Namespace für iTunes-Podcast-Felder
-    ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
-    ET.register_namespace("content", "http://purl.org/rss/1.0/modules/content/")
-    
-    # Neuen RSS Feed aufbauen
+
     rss_string = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
@@ -174,8 +152,7 @@ def aktualisiere_rss_feed(episoden: list):
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="{GITHUB_PAGES_URL}/cover.jpg"/>
 """
-    
-    # Bestehende Episoden aus altem Feed laden
+
     alte_episoden = []
     if os.path.exists(feed_pfad):
         try:
@@ -183,16 +160,14 @@ def aktualisiere_rss_feed(episoden: list):
             root = tree.getroot()
             channel = root.find("channel")
             if channel:
+                heute = datetime.now().strftime("%d.%m.%Y")
                 for item in channel.findall("item"):
                     title = item.findtext("title", "")
-                    # Heute's Episoden überspringen (werden neu generiert)
-                    heute = datetime.now().strftime("%d.%m.%Y")
                     if heute not in title:
                         alte_episoden.append(ET.tostring(item, encoding="unicode"))
-        except:
+        except Exception:
             pass
-    
-    # Neue Episoden hinzufügen
+
     for ep in episoden:
         datum_rfc = formatdate(ep["timestamp"])
         rss_string += f"""
@@ -206,29 +181,27 @@ Dieser Beitrag wurde automatisch erstellt von Podcast Entdeckungen. Alle Rechte 
       <enclosure url="{GITHUB_PAGES_URL}/audio/{ep["dateiname"]}" type="audio/mpeg" length="0"/>
       <guid isPermaLink="false">{ep["guid"]}</guid>
       <pubDate>{datum_rfc}</pubDate>
-      <itunes:duration>60</itunes:duration>
+      <itunes:duration>30</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>"""
-    
-    # Alte Episoden anhängen (max. 30 behalten)
-    for alte_ep in alte_episoden[:27]:  # 27 alte + 3 neue = 30 gesamt
+
+    for alte_ep in alte_episoden[:27]:
         rss_string += f"\n    {alte_ep}"
-    
+
     rss_string += """
   </channel>
 </rss>"""
-    
+
     with open(feed_pfad, "w", encoding="utf-8") as f:
         f.write(rss_string)
-    
+
     print(f"✅ RSS Feed aktualisiert mit {len(episoden)} neuen Episoden")
 
 # ─── Schritt 5: Website aktualisieren ────────────────────────────────────────
 
 def aktualisiere_website(episoden: list):
-    """Aktualisiert die index.html mit den heutigen Empfehlungen."""
     heute = datetime.now().strftime("%d.%m.%Y")
-    
+
     episoden_html = ""
     for ep in episoden:
         episoden_html += f"""
@@ -240,7 +213,7 @@ def aktualisiere_website(episoden: list):
           </audio>
           <p>🎧 Empfohlen: <a href="{ep['podcast_link']}" target="_blank">{ep['podcast_name']}</a></p>
         </div>"""
-    
+
     html = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -273,7 +246,7 @@ def aktualisiere_website(episoden: list):
   </footer>
 </body>
 </html>"""
-    
+
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html)
     print("✅ Website aktualisiert")
@@ -282,28 +255,25 @@ def aktualisiere_website(episoden: list):
 
 def main():
     print(f"🚀 Starte Generierung – {datetime.now().strftime('%d.%m.%Y %H:%M')}")
-    
+
     heute = datetime.now().strftime("%Y-%m-%d")
     episoden = []
-    
+
     for kategorie_id, kategorie in KATEGORIEN.items():
         print(f"\n📂 Verarbeite Kategorie: {kategorie['name']}")
-        
-        # 1. Top Podcasts holen
+
         podcasts = hole_top_podcasts(kategorie["itunes_genre_id"])
         if not podcasts:
             print(f"  ⚠️ Keine Podcasts gefunden für {kategorie['name']}")
             continue
         print(f"  ✅ {len(podcasts)} Podcasts geladen, Top: {podcasts[0]['name']}")
-        
-        # 2. Skript generieren
+
         ergebnis = generiere_skript(kategorie["name"], podcasts)
         print(f"  ✅ Skript generiert ({len(ergebnis['skript'])} Zeichen)")
-        
-        # 3. Audio generieren
+
         dateiname = f"{heute}-{kategorie_id}.mp3"
         audio_ok = generiere_audio(ergebnis["skript"], dateiname)
-        
+
         if audio_ok:
             episoden.append({
                 "titel": f"{kategorie['name']}: {ergebnis['empfohlener_podcast']} – {datetime.now().strftime('%d.%m.%Y')}",
@@ -315,11 +285,9 @@ def main():
                 "guid": f"{heute}-{kategorie_id}",
                 "timestamp": time.time()
             })
-        
-        # Kurze Pause zwischen API-Calls
+
         time.sleep(2)
-    
-    # 4. RSS Feed und Website aktualisieren
+
     if episoden:
         aktualisiere_rss_feed(episoden)
         aktualisiere_website(episoden)
