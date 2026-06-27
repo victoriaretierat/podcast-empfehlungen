@@ -159,37 +159,45 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
         "Gib danach in einer neuen Zeile 'EMPFEHLUNG: [Podcast-Name]' an."
     )
 
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
-            contents=prompt
-        )
-        text = response.text.strip()
+    # Retry-Logik: bis zu 5 Versuche bei 503
+    for versuch in range(5):
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.5-flash-lite",
+                contents=prompt
+            )
+            text = response.text.strip()
 
-        zeilen = text.split("\n")
-        skript_zeilen = []
-        empfohlener_podcast = podcast["name"]
+            zeilen = text.split("\n")
+            skript_zeilen = []
+            empfohlener_podcast = podcast["name"]
 
-        for zeile in zeilen:
-            if zeile.startswith("EMPFEHLUNG:"):
-                empfohlener_podcast = zeile.replace("EMPFEHLUNG:", "").strip()
-            else:
-                skript_zeilen.append(zeile)
+            for zeile in zeilen:
+                if zeile.startswith("EMPFEHLUNG:"):
+                    empfohlener_podcast = zeile.replace("EMPFEHLUNG:", "").strip()
+                else:
+                    skript_zeilen.append(zeile)
 
-        return {
-            "skript": "\n".join(skript_zeilen).strip(),
-            "empfohlener_podcast": empfohlener_podcast,
-            "empfohlener_link": podcast["link"],
-            "episode_titel": episode.get("episode_titel", ""),
-        }
-    except Exception as e:
-        print(f"Fehler bei Gemini: {e}")
-        return {
-            "skript": f"{podcast['name']} ist der aktuelle Top-Podcast in der Kategorie {kategorie_name}.",
-            "empfohlener_podcast": podcast["name"],
-            "empfohlener_link": podcast["link"],
-            "episode_titel": "",
-        }
+            return {
+                "skript": "\n".join(skript_zeilen).strip(),
+                "empfohlener_podcast": empfohlener_podcast,
+                "empfohlener_link": podcast["link"],
+                "episode_titel": episode.get("episode_titel", ""),
+            }
+
+        except Exception as e:
+            wartezeit = 10 * (versuch + 1)
+            print(f"  Gemini Fehler (Versuch {versuch+1}/5): {e}")
+            print(f"  Warte {wartezeit} Sekunden...")
+            time.sleep(wartezeit)
+
+    print("  Alle Versuche fehlgeschlagen - nutze Fallback")
+    return {
+        "skript": f"{podcast['name']} ist der aktuelle Top-Podcast in der Kategorie {kategorie_name}.",
+        "empfohlener_podcast": podcast["name"],
+        "empfohlener_link": podcast["link"],
+        "episode_titel": "",
+    }
 
 # ─── Schritt 4: Audio mit ElevenLabs generieren ──────────────────────────────
 
