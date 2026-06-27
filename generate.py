@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 from email.utils import formatdate
 import time
-import google.generativeai as genai
+from google import genai
 
 # ─── Konfiguration ───────────────────────────────────────────────────────────
 
