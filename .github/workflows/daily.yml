@@ -1,0 +1,39 @@
+name: Tägliche Podcast-Generierung
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # Jeden Tag um 06:00 Uhr Wien-Zeit (UTC+1)
+  workflow_dispatch:       # Erlaubt manuelles Starten per Knopfdruck
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Abhängigkeiten installieren
+        run: pip install requests google-generativeai
+
+      - name: Episoden generieren
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          GITHUB_PAGES_URL: https://${{ github.repository_owner }}.github.io/podcast-empfehlungen
+        run: python generate.py
+
+      - name: Änderungen speichern
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add -A
+          git commit -m "Episoden vom $(date '+%d.%m.%Y')" || echo "Keine Änderungen"
+          git push
