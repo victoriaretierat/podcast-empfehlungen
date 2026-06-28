@@ -6,37 +6,41 @@
     <link>https://victoriaretierat.github.io/podcast-empfehlungen</link>
     <language>de</language>
     <itunes:author>Podcast Entdeckungen</itunes:author>
+    <itunes:owner>
+      <itunes:name>Podcast Entdeckungen</itunes:name>
+      <itunes:email>victoria@frcollective.at</itunes:email>
+    </itunes:owner>
     <itunes:category text="Society &amp; Culture"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="https://victoriaretierat.github.io/podcast-empfehlungen/cover.jpg"/>
 
     <item>
-      <title>True Crime: Verbrechen von nebenan - Nebenan Weltweit 6: Das Monaco-Mysterium</title>
+      <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft - Nebenan Weltweit 6: Das Monaco-Mysterium</title>
       <description><![CDATA[Episode: Nebenan Weltweit 6: Das Monaco-Mysterium
 
-Verbrechen von nebenan: Nebenan Weltweit 6 Das Monaco-Mysterium. In der luxuriösen Nacht von Monaco brennt ein Penthouse und zwei Leichen werden gefunden. Philipp Fleiter und Franziska Singer decken einen Fall voller reicher Oligarchen russischer Mafia und einer rätselhaften Witwe auf.
+Willkommen zurück bei Verbrechen von nebenan! Heute entführen wir euch mit "Nebenan Weltweit 6: Das Monaco-Mysterium" in die glitzernde Welt von Monaco. Ein mysteriöses Feuer in einem Luxus-Penthouse enthüllt eine schockierende Tragödie und führt uns in ein Netz aus reichen Oligarchen, der russischen Mafia und einer rätselhaften Witwe. Seid ihr bereit, dieses Rätsel zu lüften?
 
-Zum Podcast: <a href="https://podcasts.apple.com/de/podcast/verbrechen-von-nebenan-true-crime-aus-der-nachbarschaft/id1449598446?uo=2">Verbrechen von nebenan</a>
+Zum Podcast: <a href="https://podcasts.apple.com/de/podcast/verbrechen-von-nebenan-true-crime-aus-der-nachbarschaft/id1449598446?uo=2">Verbrechen von nebenan: True Crime aus der Nachbarschaft</a>
 
 Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-true-crime.mp3" type="audio/mpeg" length="0"/>
       <guid isPermaLink="false">2026-06-28-true-crime</guid>
-      <pubDate>Sun, 28 Jun 2026 09:27:56 -0000</pubDate>
+      <pubDate>Sun, 28 Jun 2026 09:34:06 -0000</pubDate>
       <itunes:duration>30</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
-      <title>Business: Alles auf Aktien - Alles auf die Aktie – die Zukunftsformel des Rente</title>
+      <title>Business: Alles auf Aktien – Die täglichen Finanzen-News von WELT - Alles auf die Aktie – die Zukunftsformel des Rente</title>
       <description><![CDATA[Episode: Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs
 
-Willkommen bei Alles auf Aktien! Heute in "Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs" tauchen wir tief ein in die neue deutsche Staatsrente. Unser Gast war mittendrin bei der Reform und erklärt, wie die kapitalgedeckte Altersvorsorge die Zukunft sichern soll. Erfahrt, wie Rente in Echtzeit funktionieren könnte und warum gerade die Jugend jetzt die großen Gewinner werden kann!
+Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs! Diesmal werfen wir einen Blick hinter die Kulissen der neuen deutschen Staatsrente. Unser Gast war mittendrin bei der Reform und erklärt, wie die kapitalgedeckte Altersvorsorge funktionieren soll und warum gerade die Jugend von heute profitieren könnte. Seid gespannt auf spannende Einblicke!
 
-Zum Podcast: <a href="https://podcasts.apple.com/de/podcast/alles-auf-aktien-die-t%C3%A4glichen-finanzen-news/id1549709271?uo=2">Alles auf Aktien</a>
+Zum Podcast: <a href="https://podcasts.apple.com/de/podcast/alles-auf-aktien-die-t%C3%A4glichen-finanzen-news/id1549709271?uo=2">Alles auf Aktien – Die täglichen Finanzen-News von WELT</a>
 
 Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-business.mp3" type="audio/mpeg" length="0"/>
       <guid isPermaLink="false">2026-06-28-business</guid>
-      <pubDate>Sun, 28 Jun 2026 09:28:08 -0000</pubDate>
+      <pubDate>Sun, 28 Jun 2026 09:34:16 -0000</pubDate>
       <itunes:duration>30</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
@@ -44,16 +48,64 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <title>Nachrichten: Apokalypse &amp; Filterkaffee - Heimspiel: Besser berichten (mit Stefan Niggemeier</title>
       <description><![CDATA[Episode: Heimspiel: Besser berichten (mit Stefan Niggemeier)
 
-Hallo und herzlich willkommen zu Apokalypse und Filterkaffee! In unserer neuesten Folge "Heimspiel: Besser berichten" reden wir mit dem renommierten Medienjournalisten Stefan Niggemeier über Macht und Unglaubwürdigkeit von Medien. Was macht guten Journalismus in diesen verrückten Zeiten aus? Schaltet ein, das wollt ihr nicht verpassen!
+Hallo und herzlich willkommen zurück bei Apokalypse & Filterkaffee! In unserer neuesten Folge "Heimspiel: Besser berichten" sprechen wir mit dem renommierten Medienjournalisten Stefan Niggemeier. Er teilt seine Gedanken zu Macht und Glaubwürdigkeit von Medien, Nius und dem Empörungsjournalismus. Was macht eigentlich den richtigen Journalismus in diesen turbulenten Zeiten aus? Und außerdem feiern wir natürlich Mickys Geburtstag!
 
 Zum Podcast: <a href="https://podcasts.apple.com/de/podcast/apokalypse-filterkaffee/id1505993848?uo=2">Apokalypse &amp; Filterkaffee</a>
 
 Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-nachrichten.mp3" type="audio/mpeg" length="0"/>
       <guid isPermaLink="false">2026-06-28-nachrichten</guid>
-      <pubDate>Sun, 28 Jun 2026 09:28:49 -0000</pubDate>
+      <pubDate>Sun, 28 Jun 2026 09:34:26 -0000</pubDate>
       <itunes:duration>30</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
+    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+      <title>True Crime: Verbrechen von nebenan - Nebenan Weltweit 6: Das Monaco-Mysterium</title>
+      <description>Episode: Nebenan Weltweit 6: Das Monaco-Mysterium
+
+Verbrechen von nebenan: Nebenan Weltweit 6 Das Monaco-Mysterium. In der luxuriösen Nacht von Monaco brennt ein Penthouse und zwei Leichen werden gefunden. Philipp Fleiter und Franziska Singer decken einen Fall voller reicher Oligarchen russischer Mafia und einer rätselhaften Witwe auf.
+
+Zum Podcast: &lt;a href="https://podcasts.apple.com/de/podcast/verbrechen-von-nebenan-true-crime-aus-der-nachbarschaft/id1449598446?uo=2"&gt;Verbrechen von nebenan&lt;/a&gt;
+
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-true-crime.mp3" type="audio/mpeg" length="0" />
+      <guid isPermaLink="false">2026-06-28-true-crime</guid>
+      <pubDate>Sun, 28 Jun 2026 09:27:56 -0000</pubDate>
+      <ns0:duration>30</ns0:duration>
+      <ns0:explicit>false</ns0:explicit>
+    </item>
+    
+    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+      <title>Business: Alles auf Aktien - Alles auf die Aktie – die Zukunftsformel des Rente</title>
+      <description>Episode: Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs
+
+Willkommen bei Alles auf Aktien! Heute in "Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs" tauchen wir tief ein in die neue deutsche Staatsrente. Unser Gast war mittendrin bei der Reform und erklärt, wie die kapitalgedeckte Altersvorsorge die Zukunft sichern soll. Erfahrt, wie Rente in Echtzeit funktionieren könnte und warum gerade die Jugend jetzt die großen Gewinner werden kann!
+
+Zum Podcast: &lt;a href="https://podcasts.apple.com/de/podcast/alles-auf-aktien-die-t%C3%A4glichen-finanzen-news/id1549709271?uo=2"&gt;Alles auf Aktien&lt;/a&gt;
+
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-business.mp3" type="audio/mpeg" length="0" />
+      <guid isPermaLink="false">2026-06-28-business</guid>
+      <pubDate>Sun, 28 Jun 2026 09:28:08 -0000</pubDate>
+      <ns0:duration>30</ns0:duration>
+      <ns0:explicit>false</ns0:explicit>
+    </item>
+    
+    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+      <title>Nachrichten: Apokalypse &amp; Filterkaffee - Heimspiel: Besser berichten (mit Stefan Niggemeier</title>
+      <description>Episode: Heimspiel: Besser berichten (mit Stefan Niggemeier)
+
+Hallo und herzlich willkommen zu Apokalypse und Filterkaffee! In unserer neuesten Folge "Heimspiel: Besser berichten" reden wir mit dem renommierten Medienjournalisten Stefan Niggemeier über Macht und Unglaubwürdigkeit von Medien. Was macht guten Journalismus in diesen verrückten Zeiten aus? Schaltet ein, das wollt ihr nicht verpassen!
+
+Zum Podcast: &lt;a href="https://podcasts.apple.com/de/podcast/apokalypse-filterkaffee/id1505993848?uo=2"&gt;Apokalypse &amp;amp; Filterkaffee&lt;/a&gt;
+
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-nachrichten.mp3" type="audio/mpeg" length="0" />
+      <guid isPermaLink="false">2026-06-28-nachrichten</guid>
+      <pubDate>Sun, 28 Jun 2026 09:28:49 -0000</pubDate>
+      <ns0:duration>30</ns0:duration>
+      <ns0:explicit>false</ns0:explicit>
+    </item>
+  
   </channel>
 </rss>
