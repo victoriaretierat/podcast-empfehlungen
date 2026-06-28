@@ -255,6 +255,10 @@ def aktualisiere_rss_feed(episoden: list):
     <link>{GITHUB_PAGES_URL}</link>
     <language>de</language>
     <itunes:author>Podcast Entdeckungen</itunes:author>
+    <itunes:owner>
+      <itunes:name>Podcast Entdeckungen</itunes:name>
+      <itunes:email>victoria@frcollective.at</itunes:email>
+    </itunes:owner>
     <itunes:category text="Society &amp; Culture"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="{GITHUB_PAGES_URL}/cover.jpg"/>
