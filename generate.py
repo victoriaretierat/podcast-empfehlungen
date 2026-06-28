@@ -31,6 +31,14 @@ GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 # Bella - weibliche Stimme
 ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 
+# ─── Hilfsfunktion: Text für XML bereinigen ───────────────────────────────────
+
+def xml_sicher(text: str) -> str:
+    text = text.replace("&", "&amp;")
+    text = text.replace("<", "&lt;")
+    text = text.replace(">", "&gt;")
+    return text
+
 # ─── Schritt 1: Top Podcasts von iTunes holen ────────────────────────────────
 
 def hole_top_podcasts(genre_id: str, land: str = "de") -> list:
@@ -102,7 +110,10 @@ def hole_neueste_episode(podcast: dict) -> dict:
             ns = {"itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"}
             beschreibung = item.findtext("itunes:summary", "", ns).strip()
 
+        # HTML-Tags entfernen
         beschreibung = re.sub(r"<[^>]+>", "", beschreibung)
+        # Sonderzeichen bereinigen
+        beschreibung = beschreibung.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
         beschreibung = beschreibung[:800]
 
         print(f"  Neueste Episode: {titel[:60]}...")
@@ -266,13 +277,19 @@ def aktualisiere_rss_feed(episoden: list):
 
     for ep in episoden:
         datum_rfc = formatdate(ep["timestamp"])
-        episode_info = f"Episode: {ep['episode_titel']}\n\n" if ep.get("episode_titel") else ""
+        # Texte XML-sicher machen
+        titel_sicher = xml_sicher(ep["titel"])
+        skript_sicher = xml_sicher(ep["beschreibung"])
+        podcast_name_sicher = xml_sicher(ep["podcast_name"])
+        episode_titel_sicher = xml_sicher(ep.get("episode_titel", ""))
+        episode_info = f"Episode: {episode_titel_sicher}\n\n" if episode_titel_sicher else ""
+
         rss_string += f"""
     <item>
-      <title>{ep["titel"]}</title>
+      <title>{titel_sicher}</title>
       <description><![CDATA[{episode_info}{ep["beschreibung"]}
 
-Zum Podcast: <a href="{ep["podcast_link"]}">{ep["podcast_name"]}</a>
+Zum Podcast: <a href="{ep["podcast_link"]}">{podcast_name_sicher}</a>
 
 Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
       <enclosure url="{GITHUB_PAGES_URL}/audio/{ep["dateiname"]}" type="audio/mpeg" length="0"/>
@@ -371,7 +388,6 @@ def main():
         print(f"  Top-Podcast: {podcast['name']}")
 
         episode = hole_neueste_episode(podcast)
-
         ergebnis = generiere_skript(kategorie["name"], podcast, episode)
         print(f"  Skript generiert ({len(ergebnis['skript'])} Zeichen)")
 
