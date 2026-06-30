@@ -2,7 +2,7 @@ name: Tägliche Podcast-Generierung
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # Jeden Tag um 06:00 Uhr Wien-Zeit (UTC+1)
+    - cron: '0 5 * * *'  # Jeden Tag um 07:00 Uhr Wien-Zeit (UTC+2 Sommerzeit)
   workflow_dispatch:       # Erlaubt manuelles Starten per Knopfdruck
 
 jobs:
@@ -27,6 +27,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          KONTAKT_EMAIL: ${{ secrets.KONTAKT_EMAIL }}
           GITHUB_PAGES_URL: https://${{ github.repository_owner }}.github.io/podcast-empfehlungen
         run: python generate.py
 
