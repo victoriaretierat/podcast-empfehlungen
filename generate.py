@@ -1,5 +1,6 @@
 import os
 import re
+import base64
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
@@ -29,9 +30,7 @@ PODCAST_BESCHREIBUNG = "Taeglich die besten deutschsprachigen Podcasts entdecken
 GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 KONTAKT_EMAIL = os.environ.get("KONTAKT_EMAIL", "")
 
-ELEVENLABS_VOICE_ID = ""  # Adam - Free Tier
-
-# ─── Hilfsfunktion: Text für XML bereinigen ───────────────────────────────────
+# ─── Hilfsfunktion: Text für XML bereinigen ──────────────────────────────────
 
 def xml_sicher(text: str) -> str:
     text = text.replace("&", "&amp;")
@@ -69,7 +68,6 @@ def hole_neueste_episode(podcast: dict) -> dict:
         itunes_id = itunes_link.split("/id")[-1].split("?")[0]
 
     feed_url = ""
-
     if itunes_id:
         try:
             lookup_url = f"https://itunes.apple.com/lookup?id={itunes_id}&entity=podcast"
@@ -83,11 +81,7 @@ def hole_neueste_episode(podcast: dict) -> dict:
             print(f"  iTunes Lookup fehlgeschlagen: {e}")
 
     if not feed_url:
-        print(f"  Keine Feed-URL - nutze Podcast-Beschreibung")
-        return {
-            "episode_titel": "",
-            "episode_beschreibung": podcast.get("beschreibung", ""),
-        }
+        return {"episode_titel": "", "episode_beschreibung": podcast.get("beschreibung", "")}
 
     try:
         headers = {"User-Agent": "Mozilla/5.0 (compatible; PodcastEntdeckungen/1.0)"}
@@ -104,7 +98,6 @@ def hole_neueste_episode(podcast: dict) -> dict:
             raise ValueError("Keine Episoden im Feed")
 
         titel = item.findtext("title", "").strip()
-
         beschreibung = item.findtext("description", "").strip()
         if not beschreibung:
             ns = {"itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"}
@@ -115,29 +108,19 @@ def hole_neueste_episode(podcast: dict) -> dict:
         beschreibung = beschreibung[:1200]
 
         print(f"  Neueste Episode: {titel[:60]}...")
-        return {
-            "episode_titel": titel,
-            "episode_beschreibung": beschreibung,
-        }
+        return {"episode_titel": titel, "episode_beschreibung": beschreibung}
 
     except Exception as e:
-        print(f"  Feed-Parsing fehlgeschlagen: {e} - nutze Podcast-Beschreibung")
-        return {
-            "episode_titel": "",
-            "episode_beschreibung": podcast.get("beschreibung", ""),
-        }
+        print(f"  Feed-Parsing fehlgeschlagen: {e}")
+        return {"episode_titel": "", "episode_beschreibung": podcast.get("beschreibung", "")}
 
 # ─── Schritt 3: Spotify Link finden ──────────────────────────────────────────
 
 def hole_spotify_token() -> str:
-    """Holt ein Access Token via Client Credentials Flow."""
     client_id = os.environ.get("SPOTIFY_CLIENT_ID", "")
     client_secret = os.environ.get("SPOTIFY_CLIENT_SECRET", "")
-
     if not client_id or not client_secret:
-        print("  Keine Spotify Credentials gesetzt")
         return ""
-
     try:
         resp = requests.post(
             "https://accounts.spotify.com/api/token",
@@ -151,12 +134,9 @@ def hole_spotify_token() -> str:
         print(f"  Spotify Token Fehler: {e}")
         return ""
 
-
 def hole_spotify_link(podcast_name: str, token: str) -> str:
-    """Sucht den Podcast auf Spotify und gibt den Show-Link zurueck."""
     if not token:
         return ""
-
     try:
         resp = requests.get(
             "https://api.spotify.com/v1/search",
@@ -170,7 +150,6 @@ def hole_spotify_link(podcast_name: str, token: str) -> str:
             link = items[0].get("external_urls", {}).get("spotify", "")
             print(f"  Spotify Link gefunden: {link}")
             return link
-        print(f"  Kein Spotify-Treffer fuer '{podcast_name}'")
         return ""
     except Exception as e:
         print(f"  Spotify Suche Fehler: {e}")
@@ -191,7 +170,7 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
         )
         aufgabe = (
             "Erzaehl ausfuehrlich und mit Begeisterung, worum es in dieser konkreten Episode geht. "
-            "Nenne den Episodentitel, fasse die wichtigsten Punkte und Wendungen zusammen, "
+            "Nenne den Episodentitel, fasse die wichtigsten Punkte zusammen, "
             "und erklaere warum diese Episode hoerenswert ist."
         )
     else:
@@ -200,26 +179,24 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
             f"Beschreibung: {episode['episode_beschreibung']}"
         )
         aufgabe = (
-            "Erzaehl ausfuehrlich und mit Begeisterung, worum es in diesem Podcast generell geht. "
+            "Erzaehl ausfuehrlich und mit Begeisterung, worum es in diesem Podcast geht. "
             "Erklaere das Konzept, den Stil und warum Hoerer ihn lieben werden."
         )
 
     prompt = (
         "Du bist eine Podcast-Moderatorin und hast gerade diese Episode gehoert. "
-        "Du bist total begeistert und erzaehlst jetzt einer Freundin spontan davon. "
-        "Schreibe einen lebendigen, gesprochenen Text auf Deutsch, der ca. 150 bis 170 Woerter lang ist "
-        "(das ergibt etwa 60 Sekunden Sprechzeit).\n\n"
+        "Du bist total begeistert und erzaehlst einer Freundin spontan davon. "
+        "Schreibe einen lebendigen, gesprochenen Text auf Deutsch, der ca. 150 bis 170 Woerter lang ist.\n\n"
         f"{kontext}\n\n"
         f"{aufgabe}\n\n"
         "Regeln:\n"
-        "- Starte direkt mit dem Podcast- oder Episodennamen, keine steife Begruessung\n"
-        "- Klinge wie ein echter Mensch der gerade zugehoert hat: enthusiastisch, mit Energie, "
-        "vielleicht ein 'Ehrlich, das hat mich umgehauen' oder 'Stell dir vor...'\n"
-        "- Gehe konkret auf Details aus der Episode ein, nicht nur allgemeine Phrasen\n"
-        "- Variiere Satzlaenge, nutze auch kurze Ausrufe zwischendurch\n"
+        "- Starte direkt mit dem Podcast- oder Episodennamen\n"
+        "- Enthusiastisch, mit Energie, wie ein echter Mensch\n"
+        "- Konkret auf Details eingehen, nicht nur allgemeine Phrasen\n"
+        "- Kurze Ausrufe zwischendurch sind gut\n"
         "- Kein Hinweis auf Links oder Shownotes\n"
         "- Keine Sonderzeichen, keine Emojis, keine Aufzaehlungen\n"
-        "- Die Laenge ist wichtig: schreibe wirklich 150 bis 170 Woerter, nicht weniger\n\n"
+        "- Wirklich 150 bis 170 Woerter schreiben\n\n"
         "Antworte NUR mit dem Sprechtext.\n\n"
         "Gib danach in einer neuen Zeile 'EMPFEHLUNG: [Podcast-Name]' an."
     )
@@ -243,9 +220,8 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
                     skript_zeilen.append(zeile)
 
             skript = "\n".join(skript_zeilen).strip()
-
-            # Qualitaetscheck: zu kurze Antworten nochmal versuchen
             wortanzahl = len(skript.split())
+
             if wortanzahl < 60:
                 print(f"  Skript zu kurz ({wortanzahl} Woerter) - versuche erneut")
                 time.sleep(5)
@@ -265,75 +241,61 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
             time.sleep(wartezeit)
 
     print("  Alle Versuche fehlgeschlagen - nutze Fallback")
-    fallback_text = (
-        f"{podcast['name']} ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie "
-        f"{kategorie_name}. Von {podcast['autor']} produziert, hat sich die Show in der iTunes Chart ganz "
-        f"nach oben gearbeitet, und das aus gutem Grund. Wer auf der Suche nach gut gemachtem, "
-        f"unterhaltsamem Audio-Content in diesem Bereich ist, sollte unbedingt reinhoeren."
+    fallback = (
+        f"{podcast['name']} ist gerade einer der spannendsten deutschsprachigen Podcasts "
+        f"in der Kategorie {kategorie_name}. Von {podcast['autor']} produziert, hat sich die Show "
+        f"in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem "
+        f"Audio-Content ist, sollte unbedingt reinhoeren."
     )
     return {
-        "skript": fallback_text,
+        "skript": fallback,
         "empfohlener_podcast": podcast["name"],
         "empfohlener_link": podcast["link"],
         "episode_titel": "",
     }
 
-# ─── Schritt 5: Audio mit ElevenLabs generieren ──────────────────────────────
+# ─── Schritt 5: Audio mit Google Cloud TTS generieren ────────────────────────
 
 def generiere_audio(skript: str, dateiname: str) -> bool:
-    api_key = os.environ["ELEVENLABS_API_KEY"]
-
-    # Schritt 1: Verfügbare Default Voices abrufen
-    voice_id = ""
-    try:
-        resp = requests.get(
-            "https://api.elevenlabs.io/v1/voices",
-            headers={"xi-api-key": api_key},
-            timeout=10
-        )
-        resp.raise_for_status()
-        voices = resp.json().get("voices", [])
-        # Nur premade/default Stimmen nehmen
-        default_voices = [v for v in voices if v.get("category") in ("premade", "generated")]
-        if default_voices:
-            voice_id = default_voices[0]["voice_id"]
-            print(f"  Verwende Stimme: {default_voices[0]['name']} ({voice_id})")
-        else:
-            print("  Keine Default Voice gefunden!")
-            return False
-    except Exception as e:
-        print(f"  Fehler beim Abrufen der Voices: {e}")
+    api_key = os.environ.get("GOOGLE_TTS_API_KEY", "")
+    if not api_key:
+        print("  Kein Google TTS API Key gefunden!")
         return False
 
-    # Schritt 2: Audio generieren
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
-    headers = {
-        "Accept": "audio/mpeg",
-        "Content-Type": "application/json",
-        "xi-api-key": api_key
-    }
-    data = {
-        "text": skript,
-        "model_id": "eleven_turbo_v2_5",
-        "voice_settings": {
-            "stability": 0.45,
-            "similarity_boost": 0.8,
-            "style": 0.6
+    url = f"https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}"
+
+    payload = {
+        "input": {"text": skript},
+        "voice": {
+            "languageCode": "de-DE",
+            "name": "de-DE-Neural2-C",  # Weibliche deutsche Stimme, hohe Qualitaet
+            "ssmlGender": "FEMALE"
+        },
+        "audioConfig": {
+            "audioEncoding": "MP3",
+            "speakingRate": 1.05,  # Leicht schneller = lebendiger
+            "pitch": 1.0
         }
     }
 
     try:
-        response = requests.post(url, json=data, headers=headers, timeout=60)
+        response = requests.post(url, json=payload, timeout=30)
         response.raise_for_status()
+
+        audio_content = response.json().get("audioContent", "")
+        if not audio_content:
+            print("  Kein Audio-Content in der Antwort!")
+            return False
 
         os.makedirs("audio", exist_ok=True)
         with open(f"audio/{dateiname}", "wb") as f:
-            f.write(response.content)
+            f.write(base64.b64decode(audio_content))
 
-        print(f"Audio gespeichert: audio/{dateiname}")
+        print(f"  Audio gespeichert: audio/{dateiname}")
         return True
+
     except Exception as e:
-        print(f"Fehler bei ElevenLabs: {e}")
+        print(f"  Fehler bei Google TTS: {e}")
         return False
 
 # ─── Schritt 6: RSS Feed aktualisieren ───────────────────────────────────────
@@ -383,7 +345,6 @@ def aktualisiere_rss_feed(episoden: list):
         podcast_name_sicher = xml_sicher(ep["podcast_name"])
         episode_titel_sicher = xml_sicher(ep.get("episode_titel", ""))
         episode_info = f"Episode: {episode_titel_sicher}\n\n" if episode_titel_sicher else ""
-
         link_ziel = ep.get("spotify_link") or ep["podcast_link"]
         link_label = "Auf Spotify hoeren" if ep.get("spotify_link") else "Zum Podcast"
 
@@ -433,7 +394,7 @@ def aktualisiere_website(episoden: list):
           <audio controls>
             <source src="audio/{ep['dateiname']}" type="audio/mpeg">
           </audio>
-          <p><a href="{link_ziel}" target="_blank">{link_label}</a></p>
+          <p><a href="{link_ziel}" target="_blank">{link_label} &rarr;</a></p>
         </div>"""
 
     html = f"""<!DOCTYPE html>
@@ -481,7 +442,6 @@ def main():
 
     heute = datetime.now().strftime("%Y-%m-%d")
     episoden = []
-
     spotify_token = hole_spotify_token()
 
     for kategorie_id, kategorie in KATEGORIEN.items():
@@ -497,7 +457,7 @@ def main():
 
         episode = hole_neueste_episode(podcast)
         ergebnis = generiere_skript(kategorie["name"], podcast, episode)
-        print(f"  Skript generiert ({len(ergebnis['skript'])} Zeichen, {len(ergebnis['skript'].split())} Woerter)")
+        print(f"  Skript: {len(ergebnis['skript'].split())} Woerter")
 
         spotify_link = hole_spotify_link(ergebnis["empfohlener_podcast"], spotify_token)
 
