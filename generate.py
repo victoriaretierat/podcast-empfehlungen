@@ -29,7 +29,7 @@ PODCAST_BESCHREIBUNG = "Taeglich die besten deutschsprachigen Podcasts entdecken
 GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 KONTAKT_EMAIL = os.environ.get("KONTAKT_EMAIL", "")
 
-ELEVENLABS_VOICE_ID = "pNInz6obpgDQGcFmaJgB"  # Adam - Free Tier
+ELEVENLABS_VOICE_ID = ""  # Adam - Free Tier
 
 # ─── Hilfsfunktion: Text für XML bereinigen ───────────────────────────────────
 
@@ -281,11 +281,36 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
 # ─── Schritt 5: Audio mit ElevenLabs generieren ──────────────────────────────
 
 def generiere_audio(skript: str, dateiname: str) -> bool:
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{ELEVENLABS_VOICE_ID}"
+    api_key = os.environ["ELEVENLABS_API_KEY"]
+
+    # Schritt 1: Verfügbare Default Voices abrufen
+    voice_id = ""
+    try:
+        resp = requests.get(
+            "https://api.elevenlabs.io/v1/voices",
+            headers={"xi-api-key": api_key},
+            timeout=10
+        )
+        resp.raise_for_status()
+        voices = resp.json().get("voices", [])
+        # Nur premade/default Stimmen nehmen
+        default_voices = [v for v in voices if v.get("category") in ("premade", "generated")]
+        if default_voices:
+            voice_id = default_voices[0]["voice_id"]
+            print(f"  Verwende Stimme: {default_voices[0]['name']} ({voice_id})")
+        else:
+            print("  Keine Default Voice gefunden!")
+            return False
+    except Exception as e:
+        print(f"  Fehler beim Abrufen der Voices: {e}")
+        return False
+
+    # Schritt 2: Audio generieren
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
     headers = {
         "Accept": "audio/mpeg",
         "Content-Type": "application/json",
-        "xi-api-key": os.environ["ELEVENLABS_API_KEY"]
+        "xi-api-key": api_key
     }
     data = {
         "text": skript,
