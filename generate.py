@@ -30,7 +30,7 @@ GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 KONTAKT_EMAIL = os.environ.get("KONTAKT_EMAIL", "")
 
 # Bella - weibliche Stimme
-ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
+ELEVENLABS_VOICE_ID = "21m00Tcm4TlvDq8ikWAM"  # Rachel - kostenlos verfügbar
 
 # ─── Hilfsfunktion: Text für XML bereinigen ───────────────────────────────────
 
