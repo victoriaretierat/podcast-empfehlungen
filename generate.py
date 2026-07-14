@@ -29,8 +29,7 @@ PODCAST_BESCHREIBUNG = "Taeglich die besten deutschsprachigen Podcasts entdecken
 GITHUB_PAGES_URL = os.environ.get("GITHUB_PAGES_URL", "http://localhost")
 KONTAKT_EMAIL = os.environ.get("KONTAKT_EMAIL", "")
 
-# Bella - weibliche Stimme
-ELEVENLABS_VOICE_ID = "21m00Tcm4TlvDq8ikWAM"  # Rachel - kostenlos verfügbar
+ELEVENLABS_VOICE_ID = "pNInz6obpgDQGcFmaJgB"  # Adam - Free Tier
 
 # ─── Hilfsfunktion: Text für XML bereinigen ───────────────────────────────────
 
@@ -290,7 +289,7 @@ def generiere_audio(skript: str, dateiname: str) -> bool:
     }
     data = {
         "text": skript,
-        "model_id": "eleven_multilingual_v2",
+        "model_id": "eleven_turbo_v2_5",
         "voice_settings": {
             "stability": 0.45,
             "similarity_boost": 0.8,
