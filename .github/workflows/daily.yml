@@ -1,4 +1,4 @@
-name: Tägliche Podcast-Generierung
+name: Taegliche Podcast-Generierung
 
 on:
   schedule:
@@ -20,23 +20,22 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Abhängigkeiten installieren
-        run: pip install requests google-genai
+      - name: Abhaengigkeiten installieren
+        run: pip install requests google-genai edge-tts
 
       - name: Episoden generieren
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           KONTAKT_EMAIL: ${{ secrets.KONTAKT_EMAIL }}
           GITHUB_PAGES_URL: https://${{ github.repository_owner }}.github.io/podcast-empfehlungen
         run: python generate.py
 
-      - name: Änderungen speichern
+      - name: Aenderungen speichern
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           git add -A
-          git commit -m "Episoden vom $(date '+%d.%m.%Y')" || echo "Keine Änderungen"
+          git commit -m "Episoden vom $(date '+%d.%m.%Y')" || echo "Keine Aenderungen"
           git push
