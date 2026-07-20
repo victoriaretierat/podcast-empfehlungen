@@ -1,11 +1,12 @@
 import os
 import re
-import base64
+import asyncio
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from email.utils import formatdate
 import time
+import edge_tts
 from google import genai
 
 # ─── Konfiguration ───────────────────────────────────────────────────────────
@@ -254,49 +255,33 @@ def generiere_skript(kategorie_name: str, podcast: dict, episode: dict) -> dict:
         "episode_titel": "",
     }
 
-# ─── Schritt 5: Audio mit Google Cloud TTS generieren ────────────────────────
+# ─── Schritt 5: Audio mit Edge-TTS generieren (kostenlos, kein API-Key) ───────
 
 def generiere_audio(skript: str, dateiname: str) -> bool:
-    api_key = os.environ.get("GOOGLE_TTS_API_KEY", "")
-    if not api_key:
-        print("  Kein Google TTS API Key gefunden!")
-        return False
+    stimme = "de-DE-KatjaNeural"  # Weibliche deutsche Stimme, hohe Qualitaet
+    pfad = f"audio/{dateiname}"
 
-    url = f"https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}"
+    async def _synthese():
+        communicate = edge_tts.Communicate(skript, stimme, rate="+5%")
+        await communicate.save(pfad)
 
-    payload = {
-        "input": {"text": skript},
-        "voice": {
-            "languageCode": "de-DE",
-            "name": "de-DE-Neural2-C",  # Weibliche deutsche Stimme, hohe Qualitaet
-            "ssmlGender": "FEMALE"
-        },
-        "audioConfig": {
-            "audioEncoding": "MP3",
-            "speakingRate": 1.05,  # Leicht schneller = lebendiger
-            "pitch": 1.0
-        }
-    }
+    for versuch in range(3):
+        try:
+            os.makedirs("audio", exist_ok=True)
+            asyncio.run(_synthese())
 
-    try:
-        response = requests.post(url, json=payload, timeout=30)
-        response.raise_for_status()
+            if os.path.exists(pfad) and os.path.getsize(pfad) > 0:
+                print(f"  Audio gespeichert: {pfad} ({os.path.getsize(pfad)} Bytes)")
+                return True
 
-        audio_content = response.json().get("audioContent", "")
-        if not audio_content:
-            print("  Kein Audio-Content in der Antwort!")
-            return False
+            print("  Edge-TTS: Datei ist leer oder fehlt - versuche erneut")
+            time.sleep(5)
 
-        os.makedirs("audio", exist_ok=True)
-        with open(f"audio/{dateiname}", "wb") as f:
-            f.write(base64.b64decode(audio_content))
+        except Exception as e:
+            print(f"  Fehler bei Edge-TTS (Versuch {versuch+1}/3): {e}")
+            time.sleep(5)
 
-        print(f"  Audio gespeichert: audio/{dateiname}")
-        return True
-
-    except Exception as e:
-        print(f"  Fehler bei Google TTS: {e}")
-        return False
+    return False
 
 # ─── Schritt 6: RSS Feed aktualisieren ───────────────────────────────────────
 
