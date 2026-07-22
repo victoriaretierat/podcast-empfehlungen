@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Podcast Entdeckungen</title>
-    <description>Taeglich die besten deutschsprachigen Podcasts entdecken - True Crime, Business und Nachrichten.</description>
+    <description>Taeglich drei zufaellig entdeckte Comedy- und Unterhaltungs-Podcasts aus dem deutschsprachigen Raum - mit Begeisterung vorgestellt.</description>
     <link>https://victoriaretierat.github.io/podcast-empfehlungen</link>
     <language>de</language>
     <itunes:author>Podcast Entdeckungen</itunes:author>
@@ -10,50 +10,98 @@
       <itunes:name>Podcast Entdeckungen</itunes:name>
       <itunes:email>victoria@fr-collective.at</itunes:email>
     </itunes:owner>
-    <itunes:category text="Society &amp; Culture"/>
+    <itunes:category text="Comedy"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="https://victoriaretierat.github.io/podcast-empfehlungen/cover.jpg"/>
 
     <item>
-      <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft</title>
-      <description><![CDATA[Verbrechen von nebenan: True Crime aus der Nachbarschaft ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie True Crime. Von RTL+ / Philipp Fleiter produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
+      <title>SmartLess - "Timothy Olyphant"</title>
+      <description><![CDATA[Episode: "Timothy Olyphant"
 
-Auf Spotify hoeren: <a href="https://open.spotify.com/show/1hvrOvBJIRoe1fbKVkqVE6">Verbrechen von nebenan: True Crime aus der Nachbarschaft</a>
+SmartLess ist gerade einer der beliebtesten deutschsprachigen Comedy-Podcasts. Von  gemacht, bringt die Show genau die Mischung aus Humor, lockeren Gespraechen und ueberraschenden Momenten, fuer die man Comedy-Podcasts einfach liebt. Es wird ueber alles geredet, was gerade so passiert, immer mit einem Augenzwinkern und ohne sich selbst zu ernst zu nehmen. Man merkt sofort, dass hier Leute am Werk sind, die richtig Spass an der Sache haben, und genau das springt beim Zuhoeren ueber. Wer im Alltag, beim Pendeln oder beim Sport etwas zum Lachen und gute Laune sucht, ist hier absolut richtig. Unbedingt reinhoeren und selbst ueberzeugen lassen!
+
+Auf Spotify hoeren: <a href="https://open.spotify.com/show/0Yzd0g8NYmn27k2HFNplv7">SmartLess</a>
 
 Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
-      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-true-crime.mp3" type="audio/mpeg" length="0"/>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-comedy-1.mp3" type="audio/mpeg" length="0"/>
+      <guid isPermaLink="false">2026-07-22-comedy-1</guid>
+      <pubDate>Wed, 22 Jul 2026 18:06:38 -0000</pubDate>
+      <itunes:duration>180</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Schreiben &amp; Schreddern - Marc-Uwe Kling trifft Christian Stöcker</title>
+      <description><![CDATA[Episode: Marc-Uwe Kling trifft Christian Stöcker
+
+Schreiben & Schreddern ist gerade einer der beliebtesten deutschsprachigen Comedy-Podcasts. Von  gemacht, bringt die Show genau die Mischung aus Humor, lockeren Gespraechen und ueberraschenden Momenten, fuer die man Comedy-Podcasts einfach liebt. Es wird ueber alles geredet, was gerade so passiert, immer mit einem Augenzwinkern und ohne sich selbst zu ernst zu nehmen. Man merkt sofort, dass hier Leute am Werk sind, die richtig Spass an der Sache haben, und genau das springt beim Zuhoeren ueber. Wer im Alltag, beim Pendeln oder beim Sport etwas zum Lachen und gute Laune sucht, ist hier absolut richtig. Unbedingt reinhoeren und selbst ueberzeugen lassen!
+
+Auf Spotify hoeren: <a href="https://open.spotify.com/show/0bxtdsCxFcAKcJmoirEsDL">Schreiben &amp; Schreddern</a>
+
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-comedy-2.mp3" type="audio/mpeg" length="0"/>
+      <guid isPermaLink="false">2026-07-22-comedy-2</guid>
+      <pubDate>Wed, 22 Jul 2026 18:10:15 -0000</pubDate>
+      <itunes:duration>180</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Bratwurst und Baklava - mit Özcan Cosar und Bastian Bielendorfer - #350 Das Nasenbär-Bordell</title>
+      <description><![CDATA[Episode: #350 Das Nasenbär-Bordell
+
+Bratwurst und Baklava - mit Özcan Cosar und Bastian Bielendorfer ist gerade einer der beliebtesten deutschsprachigen Comedy-Podcasts. Von  gemacht, bringt die Show genau die Mischung aus Humor, lockeren Gespraechen und ueberraschenden Momenten, fuer die man Comedy-Podcasts einfach liebt. Es wird ueber alles geredet, was gerade so passiert, immer mit einem Augenzwinkern und ohne sich selbst zu ernst zu nehmen. Man merkt sofort, dass hier Leute am Werk sind, die richtig Spass an der Sache haben, und genau das springt beim Zuhoeren ueber. Wer im Alltag, beim Pendeln oder beim Sport etwas zum Lachen und gute Laune sucht, ist hier absolut richtig. Unbedingt reinhoeren und selbst ueberzeugen lassen!
+
+Auf Spotify hoeren: <a href="https://open.spotify.com/show/22ld4ZnaKY4xUvD3oIC8tn">Bratwurst und Baklava - mit Özcan Cosar und Bastian Bielendorfer</a>
+
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-comedy-3.mp3" type="audio/mpeg" length="0"/>
+      <guid isPermaLink="false">2026-07-22-comedy-3</guid>
+      <pubDate>Wed, 22 Jul 2026 18:13:55 -0000</pubDate>
+      <itunes:duration>180</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+      <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft</title>
+      <description>Verbrechen von nebenan: True Crime aus der Nachbarschaft ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie True Crime. Von RTL+ / Philipp Fleiter produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
+
+Auf Spotify hoeren: &lt;a href="https://open.spotify.com/show/1hvrOvBJIRoe1fbKVkqVE6"&gt;Verbrechen von nebenan: True Crime aus der Nachbarschaft&lt;/a&gt;
+
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-22-true-crime</guid>
       <pubDate>Wed, 22 Jul 2026 11:35:37 -0000</pubDate>
       <itunes:duration>60</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
-    <item>
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</title>
-      <description><![CDATA[Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Business. Von Friederike Hofmann, Sven Prange und die Handelsblatt Redaktion, Handelsblatt produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
+      <description>Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Business. Von Friederike Hofmann, Sven Prange und die Handelsblatt Redaktion, Handelsblatt produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
-Auf Spotify hoeren: <a href="https://open.spotify.com/show/1QZr5NinuorbELLt2SwLJU">Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</a>
+Auf Spotify hoeren: &lt;a href="https://open.spotify.com/show/1QZr5NinuorbELLt2SwLJU"&gt;Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen&lt;/a&gt;
 
-Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
-      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-business.mp3" type="audio/mpeg" length="0"/>
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-22-business</guid>
       <pubDate>Wed, 22 Jul 2026 11:39:15 -0000</pubDate>
       <itunes:duration>60</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
-    <item>
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee</title>
-      <description><![CDATA[Apokalypse & Filterkaffee ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Nachrichten. Von Micky Beisenherz & Studio Bummens produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
+      <description>Apokalypse &amp; Filterkaffee ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Nachrichten. Von Micky Beisenherz &amp; Studio Bummens produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
-Auf Spotify hoeren: <a href="https://open.spotify.com/show/6kyGUIbKUH7G506XGX4lNk">Apokalypse &amp; Filterkaffee</a>
+Auf Spotify hoeren: &lt;a href="https://open.spotify.com/show/6kyGUIbKUH7G506XGX4lNk"&gt;Apokalypse &amp;amp; Filterkaffee&lt;/a&gt;
 
-Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.]]></description>
-      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-nachrichten.mp3" type="audio/mpeg" length="0"/>
+Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
+      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-22-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-22-nachrichten</guid>
       <pubDate>Wed, 22 Jul 2026 11:42:52 -0000</pubDate>
       <itunes:duration>60</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft</title>
       <description>Verbrechen von nebenan: True Crime aus der Nachbarschaft ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie True Crime. Von RTL+ / Philipp Fleiter produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
@@ -63,11 +111,12 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-21-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-21-true-crime</guid>
       <pubDate>Tue, 21 Jul 2026 11:33:58 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</title>
       <description>Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Business. Von Friederike Hofmann, Sven Prange und die Handelsblatt Redaktion, Handelsblatt produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
@@ -77,11 +126,12 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-21-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-21-business</guid>
       <pubDate>Tue, 21 Jul 2026 11:37:35 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee</title>
       <description>Apokalypse &amp; Filterkaffee ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Nachrichten. Von Micky Beisenherz &amp; Studio Bummens produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
@@ -91,11 +141,12 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-21-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-21-nachrichten</guid>
       <pubDate>Tue, 21 Jul 2026 11:41:12 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft</title>
       <description>Verbrechen von nebenan: True Crime aus der Nachbarschaft ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie True Crime. Von RTL+ / Philipp Fleiter produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
@@ -105,12 +156,13 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-20-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-20-true-crime</guid>
       <pubDate>Mon, 20 Jul 2026 19:36:41 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</title>
       <description>Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Business. Von Friederike Hofmann, Sven Prange und die Handelsblatt Redaktion, Handelsblatt produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
@@ -120,12 +172,13 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-20-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-20-business</guid>
       <pubDate>Mon, 20 Jul 2026 19:40:20 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee</title>
       <description>Apokalypse &amp; Filterkaffee ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Nachrichten. Von Micky Beisenherz &amp; Studio Bummens produziert, hat sich die Show in den iTunes Charts ganz nach oben gearbeitet. Wer auf der Suche nach gut gemachtem Audio-Content ist, sollte unbedingt reinhoeren.
 
@@ -135,12 +188,13 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-20-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-20-nachrichten</guid>
       <pubDate>Mon, 20 Jul 2026 19:43:59 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee</title>
       <description>Apokalypse &amp; Filterkaffee ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Nachrichten. Von Micky Beisenherz &amp; Studio Bummens produziert, hat sich die Show in der iTunes Chart ganz nach oben gearbeitet, und das aus gutem Grund. Wer auf der Suche nach gut gemachtem, unterhaltsamem Audio-Content in diesem Bereich ist, sollte unbedingt reinhoeren.
 
@@ -150,13 +204,14 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-02-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-02-nachrichten</guid>
       <pubDate>Thu, 02 Jul 2026 12:34:57 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: MORD AUF EX</title>
       <description>MORD AUF EX ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie True Crime. Von Leonie Bartsch &amp; Linn Schütze produziert, hat sich die Show in der iTunes Chart ganz nach oben gearbeitet, und das aus gutem Grund. Wer auf der Suche nach gut gemachtem, unterhaltsamem Audio-Content in diesem Bereich ist, sollte unbedingt reinhoeren.
 
@@ -166,14 +221,15 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-07-01-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-07-01-true-crime</guid>
       <pubDate>Wed, 01 Jul 2026 13:57:14 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: MORD AUF EX - Die Clique</title>
       <description>Episode: Die Clique
 
@@ -187,15 +243,16 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-30-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-30-true-crime</guid>
       <pubDate>Tue, 30 Jun 2026 15:54:06 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</title>
       <description>Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Business. Von Friederike Hofmann, Sven Prange und die Handelsblatt Redaktion, Handelsblatt produziert, hat sich die Show in der iTunes Chart ganz nach oben gearbeitet, und das aus gutem Grund. Wer auf der Suche nach gut gemachtem, unterhaltsamem Audio-Content in diesem Bereich ist, sollte unbedingt reinhoeren.
 
@@ -205,15 +262,16 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-30-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-30-business</guid>
       <pubDate>Tue, 30 Jun 2026 15:57:53 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee</title>
       <description>Apokalypse &amp; Filterkaffee ist gerade einer der spannendsten deutschsprachigen Podcasts in der Kategorie Nachrichten. Von Micky Beisenherz &amp; Studio Bummens produziert, hat sich die Show in der iTunes Chart ganz nach oben gearbeitet, und das aus gutem Grund. Wer auf der Suche nach gut gemachtem, unterhaltsamem Audio-Content in diesem Bereich ist, sollte unbedingt reinhoeren.
 
@@ -223,15 +281,16 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-30-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-30-nachrichten</guid>
       <pubDate>Tue, 30 Jun 2026 16:01:41 -0000</pubDate>
-      <ns0:duration>60</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>60</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: MORD AUF EX</title>
       <description>MORD AUF EX ist der aktuelle Top-Podcast in der Kategorie True Crime.
 
@@ -241,8 +300,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-30-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-30-true-crime</guid>
       <pubDate>Tue, 30 Jun 2026 12:33:19 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -250,7 +309,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen</title>
       <description>Handelsblatt Morning Briefing - News aus Wirtschaft, Politik und Finanzen ist der aktuelle Top-Podcast in der Kategorie Business.
 
@@ -260,8 +320,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-30-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-30-business</guid>
       <pubDate>Tue, 30 Jun 2026 12:36:11 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -269,7 +329,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee</title>
       <description>Apokalypse &amp; Filterkaffee ist der aktuelle Top-Podcast in der Kategorie Nachrichten.
 
@@ -279,8 +340,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-30-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-30-nachrichten</guid>
       <pubDate>Tue, 30 Jun 2026 12:39:10 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -288,7 +349,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: MORD AUF EX - Die Clique</title>
       <description>Episode: Die Clique
 
@@ -300,8 +362,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-29-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-29-true-crime</guid>
       <pubDate>Mon, 29 Jun 2026 16:49:17 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -310,7 +372,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Alles auf Aktien - Die finale VW-Wette und die Antwort auf das Mag7-R</title>
       <description>Episode: Die finale VW-Wette und die Antwort auf das Mag7-Rätsel
 
@@ -322,8 +385,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-29-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-29-business</guid>
       <pubDate>Mon, 29 Jun 2026 16:49:31 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -332,7 +395,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee - Schwitzbürgertum  (mit Markus Feldenkirchen)</title>
       <description>Episode: Schwitzbürgertum  (mit Markus Feldenkirchen)
 
@@ -344,8 +408,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-29-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-29-nachrichten</guid>
       <pubDate>Mon, 29 Jun 2026 16:50:23 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -354,7 +418,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: Verbrechen von nebenan - Nebenan Weltweit 6: Das Monaco-Mysterium</title>
       <description>Episode: Nebenan Weltweit 6: Das Monaco-Mysterium
 
@@ -366,8 +431,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-true-crime</guid>
       <pubDate>Sun, 28 Jun 2026 11:26:30 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -377,7 +442,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Alles auf Aktien – Die täglichen Finanzen-News von WELT - Alles auf die Aktie – die Zukunftsformel des Rente</title>
       <description>Episode: Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs
 
@@ -389,8 +455,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-business</guid>
       <pubDate>Sun, 28 Jun 2026 11:26:41 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -400,7 +466,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee - Heimspiel: Besser berichten (mit Stefan Niggemeier</title>
       <description>Episode: Heimspiel: Besser berichten (mit Stefan Niggemeier)
 
@@ -412,8 +479,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-nachrichten</guid>
       <pubDate>Sun, 28 Jun 2026 11:27:07 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -423,7 +490,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: Verbrechen von nebenan: True Crime aus der Nachbarschaft - Nebenan Weltweit 6: Das Monaco-Mysterium</title>
       <description>Episode: Nebenan Weltweit 6: Das Monaco-Mysterium
 
@@ -435,8 +503,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-true-crime</guid>
       <pubDate>Sun, 28 Jun 2026 09:34:06 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -447,7 +515,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Business: Alles auf Aktien – Die täglichen Finanzen-News von WELT - Alles auf die Aktie – die Zukunftsformel des Rente</title>
       <description>Episode: Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs
 
@@ -459,8 +528,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-business.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-business</guid>
       <pubDate>Sun, 28 Jun 2026 09:34:16 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -471,7 +540,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>Nachrichten: Apokalypse &amp; Filterkaffee - Heimspiel: Besser berichten (mit Stefan Niggemeier</title>
       <description>Episode: Heimspiel: Besser berichten (mit Stefan Niggemeier)
 
@@ -483,8 +553,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-nachrichten.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-nachrichten</guid>
       <pubDate>Sun, 28 Jun 2026 09:34:26 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -495,7 +565,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
       <title>True Crime: Verbrechen von nebenan - Nebenan Weltweit 6: Das Monaco-Mysterium</title>
       <description>Episode: Nebenan Weltweit 6: Das Monaco-Mysterium
 
@@ -507,8 +578,8 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
       <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-true-crime.mp3" type="audio/mpeg" length="0" />
       <guid isPermaLink="false">2026-06-28-true-crime</guid>
       <pubDate>Sun, 28 Jun 2026 09:27:56 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
+      <itunes:duration>30</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
     </item>
     
     
@@ -520,55 +591,6 @@ Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen bei
     
     
     
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
-      <title>Business: Alles auf Aktien - Alles auf die Aktie – die Zukunftsformel des Rente</title>
-      <description>Episode: Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs
-
-Willkommen bei Alles auf Aktien! Heute in "Alles auf die Aktie – die Zukunftsformel des Renten-Revolutionärs" tauchen wir tief ein in die neue deutsche Staatsrente. Unser Gast war mittendrin bei der Reform und erklärt, wie die kapitalgedeckte Altersvorsorge die Zukunft sichern soll. Erfahrt, wie Rente in Echtzeit funktionieren könnte und warum gerade die Jugend jetzt die großen Gewinner werden kann!
-
-Zum Podcast: &lt;a href="https://podcasts.apple.com/de/podcast/alles-auf-aktien-die-t%C3%A4glichen-finanzen-news/id1549709271?uo=2"&gt;Alles auf Aktien&lt;/a&gt;
-
-Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
-      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-business.mp3" type="audio/mpeg" length="0" />
-      <guid isPermaLink="false">2026-06-28-business</guid>
-      <pubDate>Sun, 28 Jun 2026 09:28:08 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
-    </item>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <item xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd">
-      <title>Nachrichten: Apokalypse &amp; Filterkaffee - Heimspiel: Besser berichten (mit Stefan Niggemeier</title>
-      <description>Episode: Heimspiel: Besser berichten (mit Stefan Niggemeier)
-
-Hallo und herzlich willkommen zu Apokalypse und Filterkaffee! In unserer neuesten Folge "Heimspiel: Besser berichten" reden wir mit dem renommierten Medienjournalisten Stefan Niggemeier über Macht und Unglaubwürdigkeit von Medien. Was macht guten Journalismus in diesen verrückten Zeiten aus? Schaltet ein, das wollt ihr nicht verpassen!
-
-Zum Podcast: &lt;a href="https://podcasts.apple.com/de/podcast/apokalypse-filterkaffee/id1505993848?uo=2"&gt;Apokalypse &amp;amp; Filterkaffee&lt;/a&gt;
-
-Erstellt von Podcast Entdeckungen. Alle Rechte am empfohlenen Podcast liegen beim jeweiligen Urheber.</description>
-      <enclosure url="https://victoriaretierat.github.io/podcast-empfehlungen/audio/2026-06-28-nachrichten.mp3" type="audio/mpeg" length="0" />
-      <guid isPermaLink="false">2026-06-28-nachrichten</guid>
-      <pubDate>Sun, 28 Jun 2026 09:28:49 -0000</pubDate>
-      <ns0:duration>30</ns0:duration>
-      <ns0:explicit>false</ns0:explicit>
-    </item>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   </channel>
 </rss>
